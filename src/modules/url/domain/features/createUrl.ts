@@ -1,18 +1,20 @@
 export interface CreateUrl {
-  execute(input: CreateUrl.Input): Promise<void>
+  execute(input: CreateUrl.Input): Promise<CreateUrl.Ouput>
 }
 
 export namespace CreateUrl {
   export type Input = {
     fullLink: string;
-    storeId: string;
+    offerId: string;
     storeName: string;
+    resourceId: string;
   }
 
   export type Ouput = {
     id: string;
     fullLink: string;
-    storeId: string;
+    resourceId: string;
+    offerId: string;
     storeName: string;
     code: string;
     shortLink: string;
