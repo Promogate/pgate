@@ -11,11 +11,14 @@ datasource db {
 }
 
 model Url {
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
-  code       String   @unique
-  short_link String   @unique
-  full_link  String
-  created_at DateTime @default(now())
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  code        String   @unique
+  short_link  String   @unique
+  full_link   String
+  resource_id String
+  offer_id    String
+  store_name  String
+  created_at  DateTime @default(now())
 
   @@map("urls")
 }
