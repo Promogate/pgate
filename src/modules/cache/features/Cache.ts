@@ -4,7 +4,8 @@ export interface SetRedisCache {
 
 export namespace SetRedisCache {
   export type input = {
-    content: string;
+    content: Record<string, unknown>;
+    id: string;
   }
 
   export type output = void
