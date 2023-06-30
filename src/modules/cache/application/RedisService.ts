@@ -10,7 +10,7 @@ export class RedisService implements SetRedisCache, GetRedisCache {
 
   async setCache(input: SetRedisCache.input): Promise<SetRedisCache.output> {
     const content = JSON.stringify(input.content);
-    await this.redis.set(input.id, content, 'EX', 2678400);
+    await this.redis.set(input.id, content, 'EX', 2678400); // expires 31 days
   }
 
   async getCache(input: GetRedisCache.input): Promise<GetRedisCache.output> {
