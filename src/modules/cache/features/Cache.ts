@@ -7,7 +7,7 @@ export interface SetRedisCache {
 export namespace SetRedisCache {
   export type input = {
     content: Record<string, unknown>;
-    id: string;
+    cacheKey: string;
   }
 
   export type output = void
@@ -19,7 +19,7 @@ export interface GetRedisCache {
 
 export namespace GetRedisCache {
   export type input = {
-    id: string;
+    cacheKey: string;
   }
 
   export type output = Offer | undefined;
