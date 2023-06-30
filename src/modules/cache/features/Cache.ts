@@ -1,3 +1,5 @@
+import { Offer } from '../@types';
+
 export interface SetRedisCache {
   setCache(input: SetRedisCache.input): Promise<SetRedisCache.output>
 }
@@ -20,5 +22,5 @@ export namespace GetRedisCache {
     id: string;
   }
 
-  export type output = Record<string, unknown> | undefined;
+  export type output = Offer | undefined;
 }
