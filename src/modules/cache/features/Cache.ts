@@ -10,3 +10,15 @@ export namespace SetRedisCache {
 
   export type output = void
 }
+
+export interface GetRedisCache {
+  getCache(input: GetRedisCache.input): Promise<GetRedisCache.output>
+}
+
+export namespace GetRedisCache {
+  export type input = {
+    id: string;
+  }
+
+  export type output = Record<string, unknown> | undefined;
+}
