@@ -24,3 +24,14 @@ export namespace GetRedisCache {
 
   export type output = Offer | undefined;
 }
+
+export interface DeleteRedisCache {
+  deleteCache(input: DeleteRedisCache.Input): Promise<DeleteRedisCache.Output>
+}
+
+export namespace DeleteRedisCache {
+  export type Input = {
+    cacheKey: string;
+  }
+  export type Output = void
+}

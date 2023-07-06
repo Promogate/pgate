@@ -3,4 +3,5 @@ export type CreateUrlInput = {
   offerId: string;
   storeName: string;
   resourceId: string;
+  destinationLink: string;
 }
