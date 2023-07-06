@@ -1,7 +1,7 @@
 import Redis from 'ioredis';
-import { GetRedisCache, SetRedisCache } from '../features';
+import { DeleteRedisCache, GetRedisCache, SetRedisCache } from '../features';
 
-export class RedisService implements SetRedisCache, GetRedisCache {
+export class RedisService implements SetRedisCache, GetRedisCache, DeleteRedisCache {
   redis: Redis
 
   constructor() {
@@ -18,5 +18,9 @@ export class RedisService implements SetRedisCache, GetRedisCache {
     if (!cached) return;
     const result = JSON.parse(cached);
     return result;
+  }
+
+  async deleteCache(input: DeleteRedisCache.Input): Promise<DeleteRedisCache.Output> {
+    await this.redis.del(input.cacheKey) 
   }
 }
