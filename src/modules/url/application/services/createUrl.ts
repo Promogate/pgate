@@ -24,6 +24,7 @@ export class CreateUrlService implements CreateUrl {
         offer_id: input.offerId,
         store_name: input.storeName,
         resource_id: input.resourceId,
+        destination_link: input.destinationLink
       }
     })
     

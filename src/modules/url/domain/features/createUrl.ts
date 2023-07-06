@@ -8,6 +8,7 @@ export namespace CreateUrl {
     offerId: string;
     storeName: string;
     resourceId: string;
+    destinationLink: string;
   }
 
   export type Ouput = {
