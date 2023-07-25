@@ -13,12 +13,14 @@ export async function GET(request: Request, { params }: Params) {
         code: params.code
       }
     })
+    console.log({findURL: findURL})
     if (!findURL) return NextResponse.redirect('https://promogate.app/link-nao-encontrado');
     const { data } = await api.get<APIResponse>(`/resources/offer`, {
       headers: {
         'x-short-link': findURL.short_link
       }
     });
+    console.log(data)
     await redis.setCache({ cacheKey: params.code, content: data.offer })
     return NextResponse.redirect(data.offer.destination_link);
   }
