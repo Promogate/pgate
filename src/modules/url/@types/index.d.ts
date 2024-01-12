@@ -5,3 +5,8 @@ export type CreateUrlInput = {
   resourceId: string;
   destinationLink: string;
 }
+
+export type CreateRedirectorUrlInput = {
+  destinationLink: string;
+  redirectorId: string;
+}
