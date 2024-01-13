@@ -24,19 +24,21 @@ export class CreateUrlService implements CreateUrl {
         offer_id: input.offerId,
         store_name: input.storeName,
         resource_id: input.resourceId,
-        destination_link: input.destinationLink
+        destination_link: input.destinationLink,
+        type: "offer"
       }
     })
     
     return {
       id: result.id,
       code: result.code,
-      resourceId: result.resource_id,
-      offerId: result.offer_id,
-      storeName: result.store_name,
-      fullLink: result.full_link,
+      resourceId: result.resource_id as string,
+      offerId: result.offer_id as string,
+      storeName: result.store_name as string,
+      fullLink: result.full_link as string,
       shortLink: result.short_link,
-      createdAt: result.created_at
+      createdAt: result.created_at,
+      type: result.type
     }
   }
 }
