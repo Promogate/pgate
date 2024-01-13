@@ -9,4 +9,5 @@ export type CreateUrlInput = {
 export type CreateRedirectorUrlInput = {
   destinationLink: string;
   redirectorId: string;
+  type: string;
 }

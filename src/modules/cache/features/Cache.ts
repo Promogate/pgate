@@ -22,7 +22,7 @@ export namespace GetRedisCache {
     cacheKey: string;
   }
 
-  export type output = Offer | undefined;
+  export type output = any;
 }
 
 export interface DeleteRedisCache {

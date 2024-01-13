@@ -20,5 +20,6 @@ export namespace CreateUrl {
     code: string;
     shortLink: string;
     createdAt: Date;
+    type: string;
   }
 }

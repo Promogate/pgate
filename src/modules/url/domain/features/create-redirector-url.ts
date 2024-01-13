@@ -6,6 +6,7 @@ export namespace CreateRedirectorUrl {
   export type Input = {
     destinationLink: string;
     redirectorId: string;
+    type: string;
   }
 
   export type Ouput = {
@@ -13,5 +14,6 @@ export namespace CreateRedirectorUrl {
     code: string;
     shortLink: string;
     destinationLink: string;
+    type: string;
   }
 }

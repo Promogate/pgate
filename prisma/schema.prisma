@@ -15,21 +15,14 @@ model Url {
   code             String   @unique
   short_link       String   @unique
   destination_link String
-  full_link        String
-  resource_id      String
-  offer_id         String
-  store_name       String
+  type             String
   created_at       DateTime @default(now())
 
+  resource_id      String?
+  offer_id         String?
+  store_name       String?
+  full_link        String?
+  redirector_id    String?
+
   @@map("urls")
-}
-
-model RedirectorUrl {
-  id               String @id @default(auto()) @map("_id") @db.ObjectId
-  redirector_id    String
-  code             String @unique
-  short_link       String @unique
-  destination_link String
-
-  @@map("redirector_urls")
 }
